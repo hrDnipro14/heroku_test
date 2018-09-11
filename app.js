@@ -21,7 +21,7 @@ app.use('/views', express.static(__dirname + '/views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', authRouter);
-app.use('/admin/*',(req, res)=>{
+app.use('/',(req, res)=>{
   res.sendFile(path.join(__dirname,'/views/index.html'));
 })
 app.use('/', defaultRouter);
